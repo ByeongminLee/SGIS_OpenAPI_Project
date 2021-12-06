@@ -17,4 +17,4 @@ for (let x = 0; x < admNumLength; x++) {
     get_admCodeSub(accessToken, mainNumber);
 }
 
-console.log(ADM_CODE_SUB_NUM, ADM_CODE_SUB_Name);
+console.log(ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME);
