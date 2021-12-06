@@ -1,1 +1,106 @@
 /* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+
+
+html {
+    font-family: 'Noto Serif KR', serif;
+    overflow-x: hidden;
+}
+
+body {
+    background: url('../img/seoul.jpg') no-repeat;
+    background-size: cover;
+}
+
+/* 제목 */
+h1 {
+    margin: 35px 0 20px 0;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+}
+
+/* 탭 메뉴 */
+.tab {
+    width: 1480px;
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    height:15px;
+    margin: 0 auto;
+    border-bottom: 0px;
+}
+
+.tab button {
+    background-color: inherit;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    opacity: 0.92;
+    transition: 0.3s;
+    font-size: 12px;
+    height:40px;
+    padding: 0 10px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.tab button:hover {
+    background-color:#5e5e5e;
+    color: #fff;
+}
+
+/* 단위: 명 */
+.unit {
+    background-color: #f1f1f1;
+    opacity: 0.92;
+    width: 1420px;
+    font-size: 13px;
+    margin: 0 auto;
+    padding-top: 15px;
+    text-indent: 1300px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.tabcontent {
+    text-align: center;
+    width: 1420px;
+    margin: 0 auto;
+    background-color:#f1f1f1;   
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px 0 20px 0;
+    opacity: 0.92;
+}
+
+/* 테이블 */
+table {
+    width: 1360px;
+    margin: 0 30px;
+    font-size: 13px;
+    background-color:white;
+}
+
+th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    width:140px;
+}
+
+
+/*출처*/
+.source {
+    color: rgb(78, 78, 78);
+    font-size: 13px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.source a {
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+}
+
+.source a:hover {
+    text-decoration: underline;
+}
