@@ -3,7 +3,7 @@
  * @description : 각 지역의 나이대별 통계 가져오기
  * @author : 이병민 (bmlee531@gmail.com)
  */
-export let ageData = [];
+import { ageData } from "./tab.js";
 
 function get_ageData(accessToken, adm_cd) {
     const xhr = new XMLHttpRequest();
@@ -20,9 +20,6 @@ function get_ageData(accessToken, adm_cd) {
         if (target.readyState == XMLHttpRequest.DONE) {
             if (target.status == 200) {
                 const req = JSON.parse(target.response);
-                // 초기화
-                ageData = [];
-
                 // 이차 배열을 위한 배열
                 let ageDataTemp = [];
                 // 값 추가

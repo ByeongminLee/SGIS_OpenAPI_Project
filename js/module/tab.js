@@ -5,8 +5,10 @@
  */
 import { accessToken } from "./get_accessToken.js";
 import { ADM_CODE_SUB_NUM } from "./get_admCodeSub.js";
-import { ageData, get_ageData } from "./get_ageData.js";
+import { get_ageData } from "./get_ageData.js";
 import { get_genderData } from "./get_genderData.js";
+
+export let ageData = [];
 
 /** 각 도 마다 탭에대한 active 활성/비활성 */
 const tablinks = document.querySelectorAll(".tablinks");
@@ -30,13 +32,14 @@ for (const tab of tablinks) {
 
         /** 탭에 해당하는 데이터 값 가져오기 */
         let subNumber = ADM_CODE_SUB_NUM[cityNum];
+        // 초기화
+        ageData = [];
 
         for (let z = 1; z < subNumber.length; z++) {
             get_ageData(accessToken, subNumber[z]);
             get_genderData(accessToken, subNumber[z]);
-            console.log(ageData);
         }
-
+        console.log(ageData);
         /** 데이터 값 가져오기 end */
 
         // 취득한 값을 id속성으로 사용하는 페이지에게 active클래스 적용

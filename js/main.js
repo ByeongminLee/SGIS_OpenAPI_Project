@@ -2,7 +2,6 @@ import { accessToken } from "./module/get_accessToken.js";
 import { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME } from "./module/get_admCodeMain.js";
 import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
 import "./module/tab.js";
-import { ageData } from "./module/get_ageData.js";
 
 // 행정구역 (도, 시 코드 가져오기)
 get_admCodeMain(accessToken);
