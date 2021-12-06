@@ -58,8 +58,20 @@ for (const tab of tablinks) {
             }
             htmlStr += "</tr>";
             document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
-        }
-
+        };
+        var genderDataArr = genderData;
+        var htmlStr = thead + "";
+        console.log(genderDataArr.length)
+        for(var i=0; i<genderDataArr.length; i++) {
+            htmlStr += "<tr>";
+            for(var j=0; j<genderDataArr[i].length; j++) {
+                htmlStr += "<td>";
+                htmlStr += genderDataArr[i][j];
+                htmlStr += "</td>";
+            }
+            htmlStr += "</tr>";
+            document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
+        };
 
         /** 데이터 값 가져오기 end */
 
