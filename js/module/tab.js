@@ -44,34 +44,25 @@ for (const tab of tablinks) {
         console.log(ageData);
         console.log(genderData);
 
-        const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`
-        
-        var ageDataArr = ageData;
+        const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen_in">10대 이하</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`
+    
+        var dataArr = ageData;
         var htmlStr = thead + "";
-        console.log(ageDataArr.length)
-        for(var i=0; i<ageDataArr.length; i++) {
+
+        for(var i=0; i<dataArr.length; i++) {
+            dataArr[i].splice([1][0],[0][1],genderData[i][2]);
+            dataArr[i].splice([1][0],[0][2],genderData[i][1]);
+
             htmlStr += "<tr>";
-            for(var j=0; j<ageDataArr[i].length; j++) {
+            for(var j=0; j<dataArr[i].length; j++) {
                 htmlStr += "<td>";
-                htmlStr += ageDataArr[i][j];
+                htmlStr += dataArr[i][j];
                 htmlStr += "</td>";
             }
             htmlStr += "</tr>";
             document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
-        };
-        var genderDataArr = genderData;
-        var htmlStr = thead + "";
-        console.log(genderDataArr.length)
-        for(var i=0; i<genderDataArr.length; i++) {
-            htmlStr += "<tr>";
-            for(var j=0; j<genderDataArr[i].length; j++) {
-                htmlStr += "<td>";
-                htmlStr += genderDataArr[i][j];
-                htmlStr += "</td>";
-            }
-            htmlStr += "</tr>";
-            document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
-        };
+        }
+
 
         /** 데이터 값 가져오기 end */
 
