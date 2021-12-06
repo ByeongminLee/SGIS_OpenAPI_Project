@@ -1,6 +1,6 @@
 /*
- * @filename : adm_code.js
- * @description : 행정구역 코드
+ * @filename : get_admCodeMain.js
+ * @description : 행정구역 (도,시) 코드 가져오기
  * @author : 이병민 (bmlee531@gmail.com)
  */
 
