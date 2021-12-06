@@ -2,6 +2,7 @@ import { accessToken } from "./module/get_accessToken.js";
 import { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME } from "./module/get_admCodeMain.js";
 import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
 import { get_ageData } from "./module/get_ageData.js";
+import { get_genderData } from "./module/get_genderData.js";
 
 // 행정구역 (도, 시 코드 가져오기)
 get_admCodeMain(accessToken);
@@ -28,5 +29,15 @@ for (let y = 0; y < admSubNumLength; y++) {
 
     for (let z = 1; z < subNumber.length; z++) {
         get_ageData(accessToken, subNumber[z]);
+    }
+}
+
+let admSubNumLength2 = ADM_CODE_SUB_NUM.length;
+
+for (let a = 0; a < admSubNumLength2; a++) {
+    let subNumber2 = ADM_CODE_SUB_NUM[y];
+
+    for (let b = 1; b < subNumber2.length; b++) {
+        get_genderData(accessToken, subNumber2[z]);
     }
 }
