@@ -35,9 +35,9 @@ for (let y = 0; y < admSubNumLength; y++) {
 let admSubNumLength2 = ADM_CODE_SUB_NUM.length;
 
 for (let a = 0; a < admSubNumLength2; a++) {
-    let subNumber2 = ADM_CODE_SUB_NUM[y];
+    let subNumber2 = ADM_CODE_SUB_NUM[a];
 
     for (let b = 1; b < subNumber2.length; b++) {
-        get_genderData(accessToken, subNumber2[z]);
+        get_genderData(accessToken, subNumber2[b]);
     }
 }
