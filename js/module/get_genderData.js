@@ -1,8 +1,7 @@
-
 /*
  * @filename : get_genderData.js
  * @description : 각 지역의 남녀비율 통계 가져오기
- * @author : 
+ * @author :
  */
 import { genderData } from "./tab.js";
 
@@ -50,7 +49,7 @@ function get_genderData(accessToken, adm_cd) {
             }
         }
     };
-    xhr.open(method, url, false);
+    xhr.open(method, url);
     xhr.send();
 }
 

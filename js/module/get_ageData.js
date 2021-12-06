@@ -56,7 +56,7 @@ function get_ageData(accessToken, adm_cd) {
             }
         }
     };
-    xhr.open(method, url, false);
+    xhr.open(method, url);
     xhr.send();
 }
 
