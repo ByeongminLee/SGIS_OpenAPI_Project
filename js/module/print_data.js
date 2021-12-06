@@ -25,7 +25,7 @@ function print_data() {
     //지역
     const th1 = document.createElement("th");
     th1.innerHTML = v.adm_cd;
-
+    th1.classList.add('citizen');
     /**인구수/10000단위*/
 
     //남자인구
