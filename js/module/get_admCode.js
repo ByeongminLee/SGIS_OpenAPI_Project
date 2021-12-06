@@ -1,10 +1,14 @@
 /*
  * @filename : adm_code.js
  * @description : 행정구역 코드
- * @author : 이병민 (bmlee531@gmail.com), 김경의 (chanillekim@gmail.com)
+ * @author : 이병민 (bmlee531@gmail.com)
  */
+
+// 행정구역 코드 번호
 const ADM_CODE_NUM = [];
+// 행정구역명
 const ADM_CODE_NAME = [];
+
 function get_admCode(accessToken) {
     const xhr = new XMLHttpRequest();
     const method = "GET";
