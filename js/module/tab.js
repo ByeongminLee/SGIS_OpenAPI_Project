@@ -24,9 +24,9 @@ for (const tab of tablinks) {
         e.currentTarget.classList.add("active");
 
         // 화면상에 보이는 모든 페이지를 숨김
-        for (const fa of document.querySelectorAll(".tabcontent")) {
-            fa.classList.remove("active");
-        }
+        //for (const fa of document.querySelectorAll(".tabcontent")) {
+        //    fa.classList.remove("active");
+        //}
         //  클릭된 버튼에 적용된 'data-target' 값을 취득
         let city = e.currentTarget.dataset.target;
         let cityNum = parseInt(city);
@@ -43,10 +43,25 @@ for (const tab of tablinks) {
         }
         console.log(ageData);
         console.log(genderData);
+
+        var ageDataArr = ageData
+        var htmlStr = "";
+        console.log(ageDataArr.length)
+        for(var i=0; i<ageDataArr.length; i++) {
+            htmlStr += "<tbody><tr>";
+            for(var j=0; j<ageDataArr[i].length; j++) {
+                htmlStr += "<td>";
+                htmlStr += ageDataArr[i][j];
+                htmlStr += "</td>";
+            }
+            htmlStr += "</tr></tbody>";
+            document.getElementById("list").innerHTML = htmlStr;
+        }
+
         /** 데이터 값 가져오기 end */
 
         // 취득한 값을 id속성으로 사용하는 페이지에게 active클래스 적용
-        document.getElementById(city).classList.add("active");
+        //document.getElementById(city).classList.add("active");
     });
 }
 /** 각 구 마다 탭에대한 active 활성/비활성 */
