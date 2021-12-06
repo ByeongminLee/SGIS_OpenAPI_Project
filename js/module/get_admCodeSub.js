@@ -75,7 +75,7 @@ function get_admCodeSub(accessToken, mainNumber) {
             }
         }
     };
-    xhr.open(method, url);
+    xhr.open(method, url, false);
     xhr.send();
 }
 
