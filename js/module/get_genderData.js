@@ -1,4 +1,10 @@
 
+/*
+ * @filename : get_genderData.js
+ * @description : 각 지역의 남녀비율 통계 가져오기
+ * @author : 
+ */
+import { genderData } from "./tab.js";
 
 function get_genderData(accessToken, adm_cd) {
     const xhr = new XMLHttpRequest();
@@ -15,15 +21,13 @@ function get_genderData(accessToken, adm_cd) {
         if (target.readyState == XMLHttpRequest.DONE) {
             if (target.status == 200) {
                 const req = JSON.parse(target.response);
-                console.log(
-                    "adm_cd:" +
-                        adm_cd +
-                        req.result[0].adm_nm +
-                        "::: \n 여자비율:" +
-                        req.result[0].f_per +
-                        "\n 남자비율 :" +
-                        req.result[0].m_per
-                );
+                // 이차 배열을 위한 배열
+                let genderDataTemp = [];
+                // 값 추가
+                genderDataTemp.push(req.result[0].adm_nm);
+                genderDataTemp.push(req.result[0].f_per);
+                genderDataTemp.push(req.result[0].m_per);
+                genderData.push(genderDataTemp);
             } else {
                 const s = parseInt(target.status / 100);
                 let errMsg = null;
