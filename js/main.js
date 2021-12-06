@@ -1,9 +1,8 @@
 import { accessToken } from "./module/get_accessToken.js";
 import { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME } from "./module/get_admCodeMain.js";
 import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
-import { get_ageData } from "./module/get_ageData.js";
-import { get_genderData } from "./module/get_genderData.js";
-import { city } from "./module/tab.js";
+
+import "./module/tab.js";
 
 // 행정구역 (도, 시 코드 가져오기)
 get_admCodeMain(accessToken);
@@ -19,19 +18,3 @@ for (let x = 0; x < admNumLength; x++) {
     let mainNumber = ADM_CODE_NUM[x];
     get_admCodeSub(accessToken, mainNumber);
 }
-
-console.log(ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME);
-
-// 각 지역의 나이대별 통계 가져오기
-let admSubNumLength = ADM_CODE_SUB_NUM.length;
-
-// y <admSubNumLength (전체다 출력할시 변경해야함)
-for (let y = 0; y < 1; y++) {
-    let subNumber = ADM_CODE_SUB_NUM[y];
-
-    for (let z = 1; z < subNumber.length; z++) {
-        get_ageData(accessToken, subNumber[z]);
-        get_genderData(accessToken, subNumber[z]);
-    }
-}
-console.log(city);
