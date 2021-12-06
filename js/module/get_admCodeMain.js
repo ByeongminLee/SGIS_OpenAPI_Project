@@ -9,7 +9,7 @@ const ADM_CODE_NUM = [];
 // 행정구역명
 const ADM_CODE_NAME = [];
 
-function get_admCode(accessToken) {
+function get_admCodeMain(accessToken) {
     const xhr = new XMLHttpRequest();
     const method = "GET";
     const url =
@@ -60,4 +60,4 @@ function get_admCode(accessToken) {
     xhr.send();
 }
 
-export { get_admCode, ADM_CODE_NUM, ADM_CODE_NAME };
+export { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME };
