@@ -24,20 +24,12 @@ console.log(ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME);
 // 각 지역의 나이대별 통계 가져오기
 let admSubNumLength = ADM_CODE_SUB_NUM.length;
 
-for (let y = 0; y < admSubNumLength; y++) {
+// y <admSubNumLength (전체다 출력할시 변경해야함)
+for (let y = 0; y < 1; y++) {
     let subNumber = ADM_CODE_SUB_NUM[y];
 
     for (let z = 1; z < subNumber.length; z++) {
         get_ageData(accessToken, subNumber[z]);
-    }
-}
-
-let admSubNumLength2 = ADM_CODE_SUB_NUM.length;
-
-for (let a = 0; a < admSubNumLength2; a++) {
-    let subNumber2 = ADM_CODE_SUB_NUM[a];
-
-    for (let b = 1; b < subNumber2.length; b++) {
-        get_genderData(accessToken, subNumber2[b]);
+        get_genderData(accessToken, subNumber[z]);
     }
 }
