@@ -30,7 +30,6 @@ function get_ageData(accessToken, adm_cd) {
                 ageDataTemp.push(req.result[0].thirty_cnt);
                 ageDataTemp.push(req.result[0].forty_cnt);
                 ageDataTemp.push(req.result[0].fifty_cnt);
-                ageDataTemp.push(req.result[0].fifty_cnt);
                 ageDataTemp.push(req.result[0].sixty_cnt);
                 ageDataTemp.push(req.result[0].seventy_more_than_cnt);
                 ageData.push(ageDataTemp);
