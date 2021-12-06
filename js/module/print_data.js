@@ -30,10 +30,12 @@ function print_data() {
 
     //남자인구
     const th2 = document.createElement("td");
-    th2.innerHTML = Math.floor(v.male);
+    th2.innerHTML = v.m_per;
+
     //여성인구
     const th3 = document.createElement("td");
-    th3.innerHTML = Math.floor(v.fmale);
+    th3.innerHTML = v.f_per;
+    
     //10대 인구
     const th4 = document.createElement("td");
     th4.innerHTML = Math.floor(v.teenage_cnt);

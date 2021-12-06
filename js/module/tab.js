@@ -17,9 +17,14 @@ for (const tab of tablinks) {
         e.currentTarget.classList.add('active');
 
         // 화면상에 보이는 모든 페이지를 숨김
-        for (const fa of document.querySelector(".tabcontent")) {
+        for (const fa of document.querySelectorAll(".tabcontent")) {
             fa.classList.remove('active');
         }
+        //  클릭된 버튼에 적용된 'data-target' 값을 취득
+        const city = e.currentTarget.dataset.target;
+        console.log(city);
+        // 취득한 값을 id속성으로 사용하는 페이지에게 active클래스 적용
+        document.getElementById(city).classList.add('active');
     });
 }
 /** 각 구 마다 탭에대한 active 활성/비활성 */
@@ -33,7 +38,7 @@ for (const citizenGu of citizen) {
         }
         // 클릭된 자신은 active 클래스 적용
         e.currentTarget.classList.add('active');
-        
+
         // 화면상에 보이는 모든 페이지 숨기기
         for (const ha of document.querySelector('.citizen')) {
             ha.classList.remove('active');

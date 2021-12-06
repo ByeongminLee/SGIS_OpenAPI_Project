@@ -71,6 +71,11 @@ h1 {
     border-top: none;
     padding: 10px 0 20px 0;
     opacity: 0.92;
+    display: none;
+}
+
+.tabcontent.active {
+    display: block;
 }
 
 /* 테이블 */
