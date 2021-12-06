@@ -44,19 +44,22 @@ for (const tab of tablinks) {
         console.log(ageData);
         console.log(genderData);
 
-        var ageDataArr = ageData
-        var htmlStr = "";
+        const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`
+        
+        var ageDataArr = ageData;
+        var htmlStr = thead + "";
         console.log(ageDataArr.length)
         for(var i=0; i<ageDataArr.length; i++) {
-            htmlStr += "<tbody><tr>";
+            htmlStr += "<tr>";
             for(var j=0; j<ageDataArr[i].length; j++) {
                 htmlStr += "<td>";
                 htmlStr += ageDataArr[i][j];
                 htmlStr += "</td>";
             }
-            htmlStr += "</tr></tbody>";
-            document.getElementById("list").innerHTML = htmlStr;
+            htmlStr += "</tr>";
+            document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
         }
+
 
         /** 데이터 값 가져오기 end */
 
