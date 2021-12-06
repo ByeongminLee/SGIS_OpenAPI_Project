@@ -5,9 +5,15 @@
  */
 
 // 행정구역 코드 번호
-const ADM_CODE_NUM = [];
+let ADM_CODE_NUM = [];
 // 행정구역명
-const ADM_CODE_NAME = [];
+let ADM_CODE_NAME = [];
+
+/**
+ * 행정구역 (도, 시 코드) 번호 가져오기
+ * @param {string} accessToken        접근 토큰
+ * @return {string}       행정구역 코드와 지역명을 각각, ADM_CODE_NUM, ADM_CODE_NAME에 저장
+ */
 
 function get_admCodeMain(accessToken) {
     const xhr = new XMLHttpRequest();
