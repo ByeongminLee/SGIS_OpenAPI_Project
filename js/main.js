@@ -5,7 +5,7 @@ import {
     ADM_CODE_NAME,
     chartData,
 } from "./module/get_admCodeMain.js";
-import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
+import { get_admCodeSub } from "./module/get_admCodeSub.js";
 import "./module/tab.js";
 import { print_chart } from "./module/print_chart.js";
 

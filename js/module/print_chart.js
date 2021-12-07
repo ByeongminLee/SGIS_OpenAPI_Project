@@ -1,3 +1,9 @@
+/*
+ * @filename : print_chart.js
+ * @description : 차트 데이터 가져오고 화면에 그리기
+ * @author : 이병민 (bmlee531@gmail.com)
+ */
+
 function print_chart(ADM_CODE_NAME, chartData) {
     const el = document.getElementById("chart");
     const data = {
@@ -76,12 +82,10 @@ function print_chart(ADM_CODE_NAME, chartData) {
     /** 차트에 값 추가 */
     ADM_CODE_NAME.map((v, i) => {
         data.series[i].name = v;
-        console.log(data.series[i].name);
     });
     chartData.map((v, i) => {
         data.series[i].data = parseInt(v);
     });
-    console.log(data);
 
     const options = {
         chart: { title: "지역별 총인구", width: 1000, height: 600 },

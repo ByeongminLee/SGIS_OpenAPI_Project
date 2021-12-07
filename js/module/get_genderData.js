@@ -1,7 +1,7 @@
 /*
  * @filename : get_genderData.js
  * @description : 각 지역의 남녀비율 통계 가져오기
- * @author :
+ * @author : 김경의 (chanillekim@gmail.com)
  */
 import { genderData } from "./tab.js";
 
