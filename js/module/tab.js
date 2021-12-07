@@ -8,7 +8,8 @@ import { accessToken } from "./get_accessToken.js";
 import { ADM_CODE_SUB_NUM } from "./get_admCodeSub.js";
 import { get_ageData } from "./get_ageData.js";
 import { get_genderData } from "./get_genderData.js";
-
+import { ADM_CODE_NAME, chartData } from "./get_admCodeMain.js";
+import { print_chart } from "./print_chart.js";
 export let ageData = [];
 export let genderData = [];
 
@@ -23,6 +24,21 @@ for (const tab of tablinks) {
         }
         // 클릭된 자기 자신은 active 클래스 적용
         e.currentTarget.classList.add("active");
+
+        if (e.currentTarget.dataset.target != "chart") {
+            document.getElementById("chart").innerHTML = "";
+            document.querySelector(".unit").innerHTML = `
+            <span class="un-1">(단위: %)</span>
+            <span class="un-2">(단위: 명)</span>
+            `;
+        } else if (e.currentTarget.dataset.target == "chart") {
+            document.getElementById("0").innerHTML = `
+            <table id="list"></table>
+            <div id="chart"></div>
+            `;
+            document.querySelector(".unit").innerHTML = ``;
+            print_chart(ADM_CODE_NAME, chartData);
+        }
 
         // 화면상에 보이는 모든 페이지를 숨김
         //for (const fa of document.querySelectorAll(".tabcontent")) {
@@ -45,17 +61,17 @@ for (const tab of tablinks) {
         console.log(ageData);
         console.log(genderData);
 
-        const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen_in">10대 이하</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`
-    
+        const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen_in">10대 이하</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`;
+
         var dataArr = ageData;
         var htmlStr = thead + "";
 
-        for(var i=0; i<dataArr.length; i++) {
-            dataArr[i].splice([1][0],[0][1],genderData[i][2]);
-            dataArr[i].splice([1][0],[0][2],genderData[i][1]);
+        for (var i = 0; i < dataArr.length; i++) {
+            dataArr[i].splice([1][0], [0][1], genderData[i][2]);
+            dataArr[i].splice([1][0], [0][2], genderData[i][1]);
 
             htmlStr += "<tr>";
-            for(var j=0; j<dataArr[i].length; j++) {
+            for (var j = 0; j < dataArr[i].length; j++) {
                 htmlStr += "<td>";
                 htmlStr += dataArr[i][j];
                 htmlStr += "</td>";
@@ -63,7 +79,6 @@ for (const tab of tablinks) {
             htmlStr += "</tr>";
             document.getElementById("list").innerHTML = `<tbody>${htmlStr}</tbody>`;
         }
-
 
         /** 데이터 값 가져오기 end */
 

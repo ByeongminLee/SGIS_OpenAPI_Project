@@ -7,6 +7,7 @@ import {
 } from "./module/get_admCodeMain.js";
 import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
 import "./module/tab.js";
+import { print_chart } from "./module/print_chart.js";
 
 // 행정구역 (도, 시 코드 가져오기)
 get_admCodeMain(accessToken);
@@ -22,98 +23,4 @@ for (let x = 0; x < admNumLength; x++) {
     let mainNumber = ADM_CODE_NUM[x];
     get_admCodeSub(accessToken, mainNumber);
 }
-const el = document.getElementById("chart");
-const data = {
-    series: [
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-        {
-            name: "",
-            data: [],
-        },
-    ],
-};
-
-/** 차트에 값 추가 */
-ADM_CODE_NAME.map((v, i) => {
-    data.series[i].name = v;
-    console.log(data.series[i].name);
-});
-chartData.map((v, i) => {
-    data.series[i].data = parseInt(v);
-});
-console.log(data);
-
-const options = {
-    chart: { title: "지역별 총인구", width: 1000, height: 600 },
-    series: {
-        dataLabels: {
-            visible: true,
-            anchor: "outer",
-        },
-    },
-};
-
-const chart = toastui.Chart.pieChart({ el, data, options });
+print_chart(ADM_CODE_NAME, chartData);
