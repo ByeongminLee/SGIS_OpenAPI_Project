@@ -1,4 +1,8 @@
-/* style.css */
+/*
+ * @filename : style.css
+ * @description : index.html를 꾸미는 css
+ * @author : 이슬기 (abcabcp@naver.com) 전찬민 (cksals3753@gmail.com)
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 
@@ -23,7 +27,7 @@ h1 {
 
 /* 탭 메뉴 */
 .tab {
-    width: 1480px;
+    width: 1500px;
     padding: 20px 0;
     text-align: center;
     overflow: hidden;
@@ -54,7 +58,7 @@ h1 {
 .unit {
     background-color: #f1f1f1;
     opacity: 0.92;
-    width: 1420px;
+    width: 1520px;
     font-size: 13px;
     margin: 0 auto;
     padding-top: 15px;
@@ -65,7 +69,7 @@ h1 {
 /* 단위: % */
 .un-1 {
     display: inline-block;
-    text-indent: 340px;
+    text-indent: 390px;
 }
 
 .un-2 {
@@ -75,7 +79,7 @@ h1 {
 
 .tabcontent {
     text-align: center;
-    width: 1420px;
+    width: 1520px;
     margin: 0 auto;
     background-color:#f1f1f1;   
     border: 1px solid #ccc;
@@ -92,7 +96,7 @@ h1 {
 /* 테이블 */
 table {
     width: 1360px;
-    margin: 0 30px;
+    margin: 0 auto;
     font-size: 13px;
     background-color:white;
 }
