@@ -58,8 +58,6 @@ for (const tab of tablinks) {
             get_ageData(accessToken, subNumber[z]);
             get_genderData(accessToken, subNumber[z]);
         }
-        console.log(ageData);
-        console.log(genderData);
 
         const thead = `<thead><tr><th></th><th class="m">남성</th><th class="f">여성</th><th class="teen_in">10대 이하</th><th class="teen">10대</th><th class="twenty">20대</th><th class="thirty">30대</th><th class="forty">40대</th><th class="fifty">50대</th><th class="sixty">60대</th><th class="seventy">70대이상</th></tr></thead>`;
 
