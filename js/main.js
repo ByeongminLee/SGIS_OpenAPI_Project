@@ -24,23 +24,96 @@ for (let x = 0; x < admNumLength; x++) {
 }
 const el = document.getElementById("chart");
 const data = {
-    categories: [],
     series: [
         {
-            name: "총인구",
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
+            data: [],
+        },
+        {
+            name: "",
             data: [],
         },
     ],
 };
+
+/** 차트에 값 추가 */
 ADM_CODE_NAME.map((v, i) => {
-    data.categories.push(v);
+    data.series[i].name = v;
+    console.log(data.series[i].name);
 });
 chartData.map((v, i) => {
-    data.series[0].data.push(v);
+    data.series[i].data = parseInt(v);
 });
+console.log(data);
 
 const options = {
-    chart: { title: "", width: 900, height: 400 },
+    chart: { title: "지역별 총인구", width: 1000, height: 600 },
+    series: {
+        dataLabels: {
+            visible: true,
+            anchor: "outer",
+        },
+    },
 };
 
-const chart = toastui.Chart.barChart({ el, data, options });
+const chart = toastui.Chart.pieChart({ el, data, options });
