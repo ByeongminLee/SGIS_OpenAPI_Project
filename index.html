@@ -7,6 +7,8 @@
         <title>SGIS OpenAPI Project</title>
         <link rel="stylesheet" href="./style/reset.css" />
         <link rel="stylesheet" href="./style/style.css" />
+
+        <link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
     </head>
     <body>
         <h1>지역별 인구통계</h1>
@@ -35,11 +37,16 @@
             <span class="un-2">(단위: 명)</span>
         </div>
         <div id="0" class="tabcontent active">
-            <table id="list">
-                
-            </table>
+            <table id="list"></table>
+            <div id="chart"></div>
         </div>
-        <div class="source">출처: <a href="https://sgis.kostat.go.kr/developer/html/openApi/api/data.html">https://sgis.kostat.go.kr/developer/html/openApi/api/data.html</a></div>
+        <script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+        <div class="source">
+            출처:
+            <a href="https://sgis.kostat.go.kr/developer/html/openApi/api/data.html"
+                >https://sgis.kostat.go.kr/developer/html/openApi/api/data.html</a
+            >
+        </div>
         <script type="module" src="./js/main.js"></script>
     </body>
 </html>

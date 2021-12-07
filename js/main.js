@@ -1,5 +1,10 @@
 import { accessToken } from "./module/get_accessToken.js";
-import { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME } from "./module/get_admCodeMain.js";
+import {
+    get_admCodeMain,
+    ADM_CODE_NUM,
+    ADM_CODE_NAME,
+    chartData,
+} from "./module/get_admCodeMain.js";
 import { get_admCodeSub, ADM_CODE_SUB_NUM, ADM_CODE_SUB_NAME } from "./module/get_admCodeSub.js";
 import "./module/tab.js";
 
@@ -17,3 +22,25 @@ for (let x = 0; x < admNumLength; x++) {
     let mainNumber = ADM_CODE_NUM[x];
     get_admCodeSub(accessToken, mainNumber);
 }
+const el = document.getElementById("chart");
+const data = {
+    categories: [],
+    series: [
+        {
+            name: "총인구",
+            data: [],
+        },
+    ],
+};
+ADM_CODE_NAME.map((v, i) => {
+    data.categories.push(v);
+});
+chartData.map((v, i) => {
+    data.series[0].data.push(v);
+});
+
+const options = {
+    chart: { title: "", width: 900, height: 400 },
+};
+
+const chart = toastui.Chart.barChart({ el, data, options });

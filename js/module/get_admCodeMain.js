@@ -8,7 +8,8 @@
 let ADM_CODE_NUM = [];
 // 행정구역명
 let ADM_CODE_NAME = [];
-
+// 전체 인구
+let chartData = [];
 /**
  * 행정구역 (도, 시 코드) 번호 가져오기
  * @param {string} accessToken        접근 토큰
@@ -36,6 +37,8 @@ function get_admCodeMain(accessToken) {
                     ADM_CODE_NUM.push(req.result[i].adm_cd);
                     // 코드 이름(지역명) 저장
                     ADM_CODE_NAME.push(req.result[i].adm_nm);
+
+                    chartData.push(req.result[i].tot_ppltn);
 
                     //console.log(req.result[i].adm_cd, req.result[i].adm_nm);
                     //console.log(ADM_CODE_NUM, ADM_CODE_NAME);
@@ -66,4 +69,4 @@ function get_admCodeMain(accessToken) {
     xhr.send();
 }
 
-export { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME };
+export { get_admCodeMain, ADM_CODE_NUM, ADM_CODE_NAME, chartData };
