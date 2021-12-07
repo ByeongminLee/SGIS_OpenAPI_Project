@@ -3,6 +3,7 @@
  * @description : 탭 클릭시 active하는 함수
  * @author : 이슬기 (abcabcp@naver.com) 전찬민 (cksals3753@gmail.com)
  */
+
 import { accessToken } from "./get_accessToken.js";
 import { ADM_CODE_SUB_NUM } from "./get_admCodeSub.js";
 import { get_ageData } from "./get_ageData.js";
