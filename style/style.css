@@ -154,15 +154,16 @@ tr:last-child > td {
 
 /*출처*/
 .source {
-    color: rgb(78, 78, 78);
+    color: rgb(189, 189, 189);
     font-size: 13px;
+    text-indent: 950px;
     padding-top: 15px;
     text-align: center;
 }
 
 .source a {
     text-decoration: none;
-    color: rgb(78, 78, 78);
+    color: rgb(189, 189, 189);
 }
 
 .source a:hover {
